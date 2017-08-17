@@ -7,80 +7,83 @@ public class Exercicio9 {
     static Scanner console = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String[] aulas = definirAulas();
+        String [][] aulas = definirAulas();
         exibeAulas(aulas);
     }
-
-    public static String[] definirAulas() {
-        System.out.println("=== PROGRAMA DE CONSULTA DE AULAS ===\n");
-        String[] aulas = new String[10];
-        System.out.println("Digite duas aulas para cada dia semana!\n");
-        for (int i = 0; i < aulas.length; i++) {
-            switch (i) {
-                case 0:
-                    System.out.println("Segunda:");
-                    aulas[i] = console.nextLine();
-                    aulas[i + 1] = console.nextLine();
+    
+    public static String [][] definirAulas (){
+        String [][] aulas = new String [5][2];
+        System.out.println("=== CRONOGRAMA DE AULAS ===\n");
+        System.out.println("Digite duas aulas por dia!");
+        for (int i = 0; i < aulas.length; i++){
+            System.out.println("");
+            for (int j = 0; j < aulas[i].length; j++){
+                try{
+                switch (i){
+                    case 0:
+                    System.out.print("Segunda[" + (j+1) + "]: ");
+                    aulas[i][j] = console.nextLine();
                     break;
                 case 1:
-                    System.out.println("\nTerca:");
-                    aulas[i + 1] = console.nextLine();
-                    aulas[i + 2] = console.nextLine();
+                    System.out.print("Terca[" + (j+1) + "]: ");
+                    aulas[i][j] = console.nextLine();
                     break;
                 case 2:
-                    System.out.println("\nQuarta:");
-                    aulas[i + 2] = console.nextLine();
-                    aulas[i + 3] = console.nextLine();
+                    System.out.print("Quarta[" + (j+1) + "]: ");
+                    aulas[i][j] = console.nextLine();
                     break;
                 case 3:
-                    System.out.println("\nQuinta:");
-                    aulas[i + 3] = console.nextLine();
-                    aulas[i + 4] = console.nextLine();
+                    System.out.print("Quinta[" + (j+1) + "]: ");
+                    aulas[i][j] = console.nextLine();
                     break;
                 case 4:
-                    System.out.println("\nSexta:");
-                    aulas[i + 4] = console.nextLine();
-                    aulas[i + 5] = console.nextLine();
+                    System.out.print("Sexta[" + (j+1) + "]: ");
+                    aulas[i][j] = console.nextLine();
                     break;
+            
+                }
+                }catch (Exception ex){
+                    System.out.println("Entrada inválida!");
+                }
             }
         }
         return aulas;
     }
-
-    public static void exibeAulas(String[] aulas) {
+    
+    public static void exibeAulas(String[][] aulas) {
         boolean sair = false;
         while (!sair) {
-            System.out.println("\nDigite o dia da semana para consulta ou sair!");
+            System.out.println("\nDigite o dia da semana para consulta ou digite sair!");
             String diaDaSemana = console.nextLine();
             diaDaSemana = diaDaSemana.toUpperCase();
             if (diaDaSemana.equals("SAIR")) {
                 System.out.println("=== SISTEMA FECHADO ===");
                 break;
             }
-            System.out.println("\nAulas:");
+            System.out.println("\nAULAS:");
             switch (diaDaSemana) {
                 case "SEGUNDA":
-                    System.out.println(aulas[0]);
-                    System.out.println(aulas[1]);
+                    System.out.println("1 - " + aulas[0][0]);
+                    System.out.println("2 - " + aulas[0][1]);
                     break;
                 case "TERCA":
-                    System.out.println(aulas[2]);
-                    System.out.println(aulas[3]);
+                    System.out.println("1 - " + aulas[1][0]);
+                    System.out.println("2 - " + aulas[1][1]);
                     break;
                 case "QUARTA":
-                    System.out.println(aulas[4]);
-                    System.out.println(aulas[5]);
+                    System.out.println("1 - " + aulas[2][0]);
+                    System.out.println("2 - " + aulas[2][1]);
                     break;
                 case "QUINTA":
-                    System.out.println(aulas[6]);
-                    System.out.println(aulas[7]);
+                    System.out.println("1 - " + aulas[3][0]);
+                    System.out.println("2 - " + aulas[3][1]);
                     break;
                 case "SEXTA":
-                    System.out.println(aulas[8]);
-                    System.out.println(aulas[9]);
+                    System.out.println("1 - " + aulas[4][0]);
+                    System.out.println("2 - " + aulas[4][1]);
                     break;
                 default:
-                    System.out.println("Entrada inválida!");
+                    System.err.println("Entrada inválida!");
             }
         }
     }
