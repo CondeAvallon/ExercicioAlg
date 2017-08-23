@@ -10,7 +10,7 @@ public class ListaNomes {
     }
 
     public static String[] criarListaNomes() {
-        String[] listaNomes = new String[50];
+        String[] listaNomes = new String[3];
         return listaNomes;
     }
 
@@ -68,7 +68,7 @@ public class ListaNomes {
             if (listaNomes[i] == null) {
                 listaNomes[i] = nome;
                 break;
-            } else if (listaNomes[49] != null) {
+            } else if (listaNomes[(listaNomes.length-1)] != null) {
                 System.out.println("\n** A lista está cheia! **");
                 break;
             } else if (listaNomes[i].equals(nome)) {
@@ -116,8 +116,11 @@ public class ListaNomes {
         for (int i = 0; i < listaNomes.length; i++) {
             System.out.println(listaNomes[i]);
             if (nome.equals(listaNomes[i])) {
-                System.out.println("Nome removido: " + nome.toUpperCase());
+                System.out.println("\nNome removido: " + nome.toUpperCase());
                 for (int j = i; j < listaNomes.length; j++) {
+                    if (listaNomes[j] == listaNomes[(listaNomes.length-1)]){
+                        listaNomes[j] = null;
+                    }
                     listaNomes[j] = listaNomes[j + 1];
                 }
             } else if (listaNomes[i] == null) {
