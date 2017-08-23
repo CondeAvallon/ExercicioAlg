@@ -21,8 +21,9 @@ public class Exercicio5 {
 
     /*função para o usuário tentar acertar o número gerado. caso o usuário digite desistir,
     o programa é fechado.
-    */
+     */
     public static void tentarAcertar(int numeroAleatorio) {
+        System.out.println("=== PROGRAMA DE TENTATIVA DE ACERTO ===\n");
         boolean acertou = false;
         System.out.println("TENTAR ACERTAR O NÚMERO de 1 a 10 GERADO PELO PROGRAMA!\n");
         while (!acertou) {
@@ -41,6 +42,7 @@ public class Exercicio5 {
                 break;
             }
         }
+        System.out.println("\n=== FIM DO PROGRAMA ===");
 
     }
 

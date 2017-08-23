@@ -52,10 +52,15 @@ public class Exercicio10 {
         System.out.println("=== SOMA DAS MATRIZES ===\n");
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] < 10){
+                System.out.print(matriz[i][j] + "  ");
+                } else {
                 System.out.print(matriz[i][j] + " ");
+                }
             }
             System.out.println("");
         }
+        System.out.println("\n=== FIM DO PROGRAMA ===");
     }
     
 }

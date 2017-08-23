@@ -13,14 +13,15 @@ public class Exercicio4 {
     }
     
     public static int obterMedia(){
+        System.out.println("=== PROGRAMA DE CÁLCULO DE MÉDIA ===\n");
         int soma = 0;
         for (int i = 0; i < 5; i++){
-            System.out.print("Digite um número: ");
+            System.out.print("Número [" + (i+1) + "]: ");
             int numero = Integer.parseInt(console.nextLine());
             soma += numero;
         }
         int media = soma / 5;
-        System.out.println("Média: " + media);
+        System.out.println("\nMédia: " + media);
         return media;
     }
     
@@ -36,6 +37,7 @@ public class Exercicio4 {
         } else {
             System.out.println("NOTA INVÁLIDA.");
         }
+        System.out.println("\n=== FIM DO PROGRAMA ===");
     }
     
 }

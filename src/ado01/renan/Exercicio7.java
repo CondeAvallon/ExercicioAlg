@@ -14,6 +14,7 @@ public class Exercicio7 {
 
     //recebe a quantidade de alunos que tem na sala
     public static int obterQtdAlunos() {
+        System.out.println("=== PROGRAMA DE CÁLCULO DE MÉDIA ===\n");
         System.out.print("Digite a quantidade de alunos na sala: ");
         int qtdAlunos = Integer.parseInt(console.nextLine());
         return qtdAlunos;
@@ -21,6 +22,7 @@ public class Exercicio7 {
 
     //funcao para que o usuario coloque no programa as notas dos alunos
     public static float[] obterNotas(int qtdAlunos) {
+        System.out.println("");
         float[] notas = new float[qtdAlunos];
         for (int i = 0; i < qtdAlunos; i++) {
             System.out.print("Digite a nota do aluno [" + (i + 1) + "]: ");
@@ -36,6 +38,7 @@ public class Exercicio7 {
             soma += notas[i];
         }
         float media = soma / notas.length;
-        System.out.println("A média da sala é: " + media);
+        System.out.println("\nA média da sala é: " + media);
+        System.out.println("\n=== FIM DO PROGRAMA ===");
     }
 }

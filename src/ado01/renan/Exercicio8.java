@@ -14,6 +14,7 @@ public class Exercicio8 {
 
     //funcao que obtem um numero do usuario
     public static int obterQtdNumero() {
+        System.out.println("=== PROGRAMA DE VERIFICAÇÃO NUMERAL ===\n");
         System.out.print("Digite a quantidade de números desejada: ");
         int qtd = Integer.parseInt(console.nextLine());
         System.out.println("");
@@ -40,7 +41,8 @@ public class Exercicio8 {
                 rodada += i;
             }
         }
-        System.out.println("\nO maior número é: " + maiorNumero + ". Identificado na rodada: " + rodada + ".");
+        System.out.println("\nO maior número é: " + maiorNumero + ", identificado na rodada: " + rodada + ".");
+        System.out.println("\n=== FIM DO PROGRAMA ===");
     }
 
 }

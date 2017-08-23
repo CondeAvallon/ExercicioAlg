@@ -53,13 +53,14 @@ public class Exercicio9 {
     public static void exibeAulas(String[][] aulas) {
         boolean sair = false;
         while (!sair) {
-            System.out.println("\nDigite o dia da semana para consulta ou digite sair!");
+            System.out.println("\nDigite o dia da semana para consulta / ou digite GERAL para ver a lista de aulas / ou digite sair!");
             String diaDaSemana = console.nextLine();
             diaDaSemana = diaDaSemana.toUpperCase();
             if (diaDaSemana.equals("SAIR")) {
-                System.out.println("=== SISTEMA FECHADO ===");
+                System.out.println("\n=== SISTEMA FECHADO ===");
                 break;
             }
+            System.out.println("========================");
             System.out.println("\nAULAS:");
             switch (diaDaSemana) {
                 case "SEGUNDA":
@@ -81,6 +82,18 @@ public class Exercicio9 {
                 case "SEXTA":
                     System.out.println("1 - " + aulas[4][0]);
                     System.out.println("2 - " + aulas[4][1]);
+                    break;
+                case "GERAL":
+                    System.out.println("Segunda 1 - " + aulas[0][0]);
+                    System.out.println("Segunda 2 - " + aulas[0][1]);
+                    System.out.println("\nTerça 1 - " + aulas[1][0]);
+                    System.out.println("Terça 2 - " + aulas[1][1]);
+                    System.out.println("\nQuarta 1 - " + aulas[2][0]);
+                    System.out.println("Quarta 2 - " + aulas[2][1]);
+                    System.out.println("\nQuinta 1 - " + aulas[3][0]);
+                    System.out.println("Quinta 2 - " + aulas[3][1]);
+                    System.out.println("\nSexta 1 - " + aulas[4][0]);
+                    System.out.println("Sexta 2 - " + aulas[4][1]);
                     break;
                 default:
                     System.err.println("Entrada inválida!");

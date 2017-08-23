@@ -14,6 +14,8 @@ public class Exercicio2 {
 
     public static float obterNumero() {
         
+        System.out.println("=== PROGRAMA DE VERIFICAÇÃO NUMERAL ===\n");
+        
         float numero = 0;
         boolean valida = false;
         
@@ -33,9 +35,9 @@ public class Exercicio2 {
     
     public static void verificaParOuImpar (float numero){
         if (numero % 2 == 0){
-            System.out.println("O número " + numero + " é par.");
+            System.out.println("\nO número " + numero + " é par.");
         } else {
-            System.out.println("O número " + numero + " é ímpar.");
+            System.out.println("\nO número " + numero + " é ímpar.");
         }
     }
     
@@ -47,10 +49,11 @@ public class Exercicio2 {
             }
         }
         if (soma == 2){
-            System.out.println("O número " + numero + " é primo.");
+            System.out.println("O número " + numero + " é primo.\n");
         } else {
-            System.out.println("O número " + numero + " não é primo.");
+            System.out.println("O número " + numero + " não é primo.\n");
         }
+        System.out.println("=== FIM DO PROGRAMA ===");
     }
 
 }

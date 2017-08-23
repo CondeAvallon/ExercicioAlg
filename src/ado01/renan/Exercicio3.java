@@ -12,6 +12,8 @@ public class Exercicio3 {
     }
 
     public static String obterNumero() {
+        
+        System.out.println("=== PROGRAMA DE TRANSFORMAÇÃO NUMERAL ===\n");
 
         System.out.print("Digite um número POR EXTENSO de 0 a 9: ");
         String numero = console.nextLine();
@@ -21,7 +23,7 @@ public class Exercicio3 {
     }
 
     public static void exibeNumero(String numero) {
-        System.out.println("\n=== NUMERAL ===");
+        System.out.print("\nNumeral: ");
         switch (numero) {
             case "UM":
                 System.out.println("1");
@@ -54,6 +56,7 @@ public class Exercicio3 {
                 System.out.println("Entrada inválida.");
                 break;
         }
+        System.out.println("\n=== FIM DO PROGRAMA ===");
     }
 
 }
