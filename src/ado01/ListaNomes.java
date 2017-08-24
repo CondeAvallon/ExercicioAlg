@@ -9,15 +9,18 @@ public class ListaNomes {
         menu(listaNomes);
     }
 
+    //criacao do vetor utilizado para armazenar nomes
     public static String[] criarListaNomes() {
-        String[] listaNomes = new String[3];
+        String[] listaNomes = new String[50];
         return listaNomes;
     }
 
+    //menu que da opcao ao usuario de escolher o que fazer
     public static void menu(String[] listaNomes) {
         boolean sair = false;
         Scanner console = new Scanner(System.in);
         System.out.println("=== PROGRAMA DE CADASTRO DE NOMES ===\n");
+        //o laco de repeticao soh eh quebrado quando o usuario escolher a opcao 0 - sair
         while (sair == false) {
             try {
                 System.out.println("\n=== MENU ===\n");
@@ -27,6 +30,7 @@ public class ListaNomes {
                 System.out.println("4 - Remover um Nome");
                 System.out.println("0 - Sair\n");
                 int menu = Integer.parseInt(console.nextLine());
+                //switch case para escolher qual a opcao desejada pelo usuario
                 switch (menu) {
                     case 1:
                         cadastrarNomes(listaNomes);
@@ -48,13 +52,15 @@ public class ListaNomes {
                         System.out.println("\nOpção inválida.");
                         break;
                 }
-            } catch (NumberFormatException ex) {
+            } catch (NumberFormatException numEx) {
                 System.err.println("Entrada inválida!");
             } catch (Exception ex) {
+                System.out.println("Erro!");
             }
         }
     }
 
+    //funcao com o objetivo de cadastrar nomes no vetor
     public static void cadastrarNomes(String[] listaNomes) {
         Scanner console = new Scanner(System.in);
         System.out.print("\nDigite o nome desejado: ");
@@ -65,19 +71,28 @@ public class ListaNomes {
         }
         nome = nome.toUpperCase();
         for (int i = 0; i < listaNomes.length; i++) {
+            //quando o laco encontra um elemento nulo, cadastra o nome em seu lugar
             if (listaNomes[i] == null) {
                 listaNomes[i] = nome;
+                System.out.println("\nNome " + nome + " cadastrado com sucesso.");
                 break;
-            } else if (listaNomes[(listaNomes.length-1)] != null) {
+                /*se a ultima posicao do vetor nao estiver null, aparece uma mensagem 
+                informando que a lista esta cheia
+                */
+            } else if (listaNomes[(listaNomes.length - 1)] != null) {
                 System.out.println("\n** A lista está cheia! **");
                 break;
+                /*se o laco encontra um elemento que ja contem o nome digitado,
+                aparece uma mensagem informando que o nome ja esta cadastrado
+                */
             } else if (listaNomes[i].equals(nome)) {
                 System.out.println("\n** Este nome já está cadastrado! **");
                 break;
-            } 
+            }
         }
     }
 
+    //apresenta todos os nomes contidos na lista, nao incluindo aspas vazias e nulls
     public static void apresentarNomes(String[] listaNomes) {
         System.out.println("");
         for (int i = 0; i < listaNomes.length; i++) {
@@ -90,6 +105,7 @@ public class ListaNomes {
         }
     }
 
+    //pesquisa um nome especifico dentro do vetor
     public static void pesquisarNomes(String[] listaNomes) {
         Scanner console = new Scanner(System.in);
         System.out.println("");
@@ -97,9 +113,13 @@ public class ListaNomes {
         String nome = console.nextLine();
         nome = nome.toUpperCase();
         for (int i = 0; i < listaNomes.length; i++) {
+            //se achar o nome digitado, aparecera em qual posicao ele se encontra
             if (nome.equals(listaNomes[i])) {
-                System.out.println("\nNome consta na lista, na posição [" + (i + 1) + "].");
+                System.out.println("\nNome " + nome + " consta na lista, na posição [" + (i + 1) + "].");
                 break;
+                /*se o laco nao encontrar o nome e chegar em um null, aparecera uma 
+                mensagem informando que o nome nao foi encontrado
+                */
             } else if (listaNomes[i] == null) {
                 System.out.println("\n **O nome não consta na lista! **");
                 break;
@@ -107,23 +127,32 @@ public class ListaNomes {
         }
     }
 
+    //exclui um nome do vetor
     public static void removerNomes(String[] listaNomes) {
+        boolean nomeDeletado = false;
         Scanner console = new Scanner(System.in);
         System.out.println("");
         System.out.print("Digite o nome a ser removido: ");
         String nome = console.nextLine();
         nome = nome.toUpperCase();
         for (int i = 0; i < listaNomes.length; i++) {
-            System.out.println(listaNomes[i]);
             if (nome.equals(listaNomes[i])) {
                 System.out.println("\nNome removido: " + nome.toUpperCase());
                 for (int j = i; j < listaNomes.length; j++) {
-                    if (listaNomes[j] == listaNomes[(listaNomes.length-1)]){
+                    /*se o nome nao estiver contido na ultima posicao, ele eh
+                    substituido pelo elemento da proxima posicao
+                    */
+                    if (j != (listaNomes.length - 1)) {
+                        listaNomes[j] = listaNomes[j + 1];
+                        /*se estiver na ultima posicao, ele apenas eh substituido
+                        por null
+                        */
+                    } else {
                         listaNomes[j] = null;
                     }
-                    listaNomes[j] = listaNomes[j + 1];
                 }
-            } else if (listaNomes[i] == null) {
+                nomeDeletado = true;
+            } else if (nomeDeletado = false) {
                 System.out.println("\n** Este nome não consta na lista. **");
                 break;
             }
