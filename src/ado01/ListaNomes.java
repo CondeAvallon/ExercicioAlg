@@ -63,7 +63,7 @@ public class ListaNomes {
     //funcao com o objetivo de cadastrar nomes no vetor
     public static void cadastrarNomes(String[] listaNomes) {
         Scanner console = new Scanner(System.in);
-        System.out.print("\nDigite o nome desejado: ");
+        System.out.print("\nDigite o nome a ser cadastrado: ");
         String nome = console.nextLine();
         if (nome.equals("")) {
             System.out.println("\n** Entrada inválida. **");
@@ -74,7 +74,7 @@ public class ListaNomes {
             //quando o laco encontra um elemento nulo, cadastra o nome em seu lugar
             if (listaNomes[i] == null) {
                 listaNomes[i] = nome;
-                System.out.println("\nNome " + nome + " cadastrado com sucesso.");
+                System.out.println("\n** Nome " + nome + " cadastrado com sucesso. **");
                 break;
                 /*se a ultima posicao do vetor nao estiver null, aparece uma mensagem 
                 informando que a lista esta cheia
@@ -95,6 +95,7 @@ public class ListaNomes {
     //apresenta todos os nomes contidos na lista, nao incluindo aspas vazias e nulls
     public static void apresentarNomes(String[] listaNomes) {
         System.out.println("");
+        System.out.println("=== NOMES DA LISTA ===\n");
         for (int i = 0; i < listaNomes.length; i++) {
             if (listaNomes[i] != null) {
                 System.out.println("Nome[" + (i + 1) + "]: " + listaNomes[i]);
@@ -115,7 +116,7 @@ public class ListaNomes {
         for (int i = 0; i < listaNomes.length; i++) {
             //se achar o nome digitado, aparecera em qual posicao ele se encontra
             if (nome.equals(listaNomes[i])) {
-                System.out.println("\nNome " + nome + " consta na lista, na posição [" + (i + 1) + "].");
+                System.out.println("\n** Nome " + nome + " consta na lista, na posição [" + (i + 1) + "]. **");
                 break;
                 /*se o laco nao encontrar o nome e chegar em um null, aparecera uma 
                 mensagem informando que o nome nao foi encontrado
@@ -137,7 +138,7 @@ public class ListaNomes {
         nome = nome.toUpperCase();
         for (int i = 0; i < listaNomes.length; i++) {
             if (nome.equals(listaNomes[i])) {
-                System.out.println("\nNome removido: " + nome.toUpperCase());
+                System.out.println("\n** Nome removido: " + nome.toUpperCase() + " **");
                 for (int j = i; j < listaNomes.length; j++) {
                     /*se o nome nao estiver contido na ultima posicao, ele eh
                     substituido pelo elemento da proxima posicao
