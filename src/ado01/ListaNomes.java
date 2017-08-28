@@ -78,13 +78,13 @@ public class ListaNomes {
                 break;
                 /*se a ultima posicao do vetor nao estiver null, aparece uma mensagem 
                 informando que a lista esta cheia
-                */
+                 */
             } else if (listaNomes[(listaNomes.length - 1)] != null) {
                 System.out.println("\n** A lista está cheia! **");
                 break;
                 /*se o laco encontra um elemento que ja contem o nome digitado,
                 aparece uma mensagem informando que o nome ja esta cadastrado
-                */
+                 */
             } else if (listaNomes[i].equals(nome)) {
                 System.out.println("\n** Este nome já está cadastrado! **");
                 break;
@@ -120,7 +120,7 @@ public class ListaNomes {
                 break;
                 /*se o laco nao encontrar o nome e chegar em um null, aparecera uma 
                 mensagem informando que o nome nao foi encontrado
-                */
+                 */
             } else if (listaNomes[i] == null) {
                 System.out.println("\n **O nome não consta na lista! **");
                 break;
@@ -142,23 +142,21 @@ public class ListaNomes {
                 for (int j = i; j < listaNomes.length; j++) {
                     /*se o nome nao estiver contido na ultima posicao, ele eh
                     substituido pelo elemento da proxima posicao
-                    */
+                     */
                     if (j != (listaNomes.length - 1)) {
                         listaNomes[j] = listaNomes[j + 1];
                         /*se estiver na ultima posicao, ele apenas eh substituido
                         por null
-                        */
+                         */
                     } else {
                         listaNomes[j] = null;
                     }
                 }
                 nomeDeletado = true;
-            } else if (nomeDeletado = false) {
-                System.out.println("\n** Este nome não consta na lista. **");
-                break;
             }
         }
-
+        if (nomeDeletado == false) {
+            System.out.println("\n** Este nome não consta na lista. **");
+        }
     }
-
 }
